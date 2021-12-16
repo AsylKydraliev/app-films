@@ -1,6 +1,3 @@
-<div>
-  <div *ngFor="let film of films">
-    <p>{{ film.film }}</p>
-    <button type="submit">Delete</button>
-  </div>
-</div>
+  <app-film-item *ngFor="let film of films"
+                 [film]="film"
+  ></app-film-item>

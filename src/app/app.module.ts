@@ -7,17 +7,21 @@ import { FilmComponent } from './film/film.component';
 import { FormsModule } from '@angular/forms';
 import { HttpService } from './shared/http.service';
 import { HttpClientModule } from '@angular/common/http';
+import { AppRoutingModule } from './app-routing.module';
+import { FilmItemComponent } from './film/film-item/film-item.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     AddFilmComponent,
     FilmComponent,
+    FilmItemComponent,
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
-    FormsModule
+    AppRoutingModule,
+    FormsModule,
   ],
   providers: [HttpService],
   bootstrap: [AppComponent]

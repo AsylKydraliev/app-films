@@ -9,10 +9,10 @@ import { HttpService } from '../shared/http.service';
 export class AddFilmComponent {
   name = '';
 
-  constructor(private filmService: HttpService) {}
+  constructor(private httpService: HttpService) {}
 
   addFilm() {
     const name = this.name;
-    this.filmService.postData(name);
+    this.httpService.postData(name);
   }
 }

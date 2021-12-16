@@ -1,0 +1,26 @@
+.input-group{
+  text-align: center;
+}
+
+.form-control{
+  width: 50%;
+  margin: 20px;
+  padding: 10px;
+  border-radius: 10px;
+}
+
+.form-control:hover{
+  box-shadow: 6px 1px 10px 5px grey;
+}
+
+.btn{
+  padding: 10px 15px;
+  border-radius: 8px;
+  color: #fff;
+  background: #000;
+  font-weight: bold;
+}
+
+.btn:hover{
+  box-shadow: 1px 1px 1px 2px #000000;
+}

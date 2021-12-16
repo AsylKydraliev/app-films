@@ -9,6 +9,7 @@ import { Subject } from 'rxjs';
 export class HttpService {
   filmsChange = new Subject<Film[]>();
   films: Film[] = [];
+  film!: Film;
   constructor(private http: HttpClient) {}
 
   postData(film: string){
@@ -30,11 +31,7 @@ export class HttpService {
       });
   }
 
-  getFilms(){
-    return this.films.slice();
-  }
-
   delete(id: string){
-    this.http.delete(`https://app-blog-f76a2-default-rtdb.firebaseio.com/films${id}.json`).subscribe();
+    this.http.delete(`https://app-blog-f76a2-default-rtdb.firebaseio.com/films/${id}.json`).subscribe();
   }
 }

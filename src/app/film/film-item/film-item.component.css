@@ -1,0 +1,30 @@
+.card{
+  border-radius: 10px;
+  background: gold;
+  display: block;
+  margin: 10px auto;
+  width: 40%;
+  border: none;
+  padding: 5px;
+  text-align: center;
+}
+
+.card:hover{
+  box-shadow: -1px 2px 16px 7px #FDFF1F;
+}
+
+button{
+  padding: 8px 15px;
+  border-radius: 8px;
+  color: #fff;
+  background: #000;
+  border: none;
+}
+
+button:active{
+  background: grey;
+}
+
+button:hover{
+  box-shadow: 1px 1px 1px 2px #000000;
+}
