@@ -7,6 +7,7 @@ import { HttpService } from '../shared/http.service';
   styleUrls: ['./add-film.component.css']
 })
 export class AddFilmComponent {
+  loading = false;
   name = '';
 
   constructor(private httpService: HttpService) {}
@@ -14,5 +15,8 @@ export class AddFilmComponent {
   addFilm() {
     const name = this.name;
     this.httpService.postData(name);
+    this.httpService.filmsFetching.subscribe((isFetching: boolean) => {
+      this.loading = isFetching;
+    });
   }
 }

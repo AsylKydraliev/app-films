@@ -1,4 +1,8 @@
 <div class="card">
   <p>{{ film.film }}</p>
-  <button (click)="onDelete(filmId)" type="submit">Delete</button>
+  <button *ngIf="!loading" (click)="onDelete(filmId)" type="submit">Delete</button>
+  <div class="spinner" *ngIf="loading">
+    <span class="spinner__animation"></span>
+    <span class="spinner__info"></span>
+  </div>
 </div>

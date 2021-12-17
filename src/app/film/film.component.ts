@@ -9,20 +9,26 @@ import { Subscription } from 'rxjs';
   styleUrls: ['./film.component.css']
 })
 export class FilmComponent implements OnInit, OnDestroy {
-  filmId!: string;
+  films!: Film[];
   filmsChangeSubscription!: Subscription;
-  films: Film[] = [];
+  filmsFetchingSubscription!: Subscription;
+  loading = false;
 
   constructor(private httpService: HttpService) {}
 
-  ngOnInit(): void {
+  ngOnInit() {
     this.filmsChangeSubscription = this.httpService.filmsChange.subscribe((films:Film[]) => {
       this.films = films;
+      console.log(this.films)
+    });
+    this.filmsFetchingSubscription = this.httpService.filmsFetching.subscribe((isFetching:boolean) => {
+      this.loading = isFetching;
     });
     this.httpService.getData();
   }
 
   ngOnDestroy(){
     this.filmsChangeSubscription.unsubscribe();
+    this.filmsFetchingSubscription.unsubscribe();
   }
 }

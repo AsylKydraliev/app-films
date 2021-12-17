@@ -1,1 +1,32 @@
+h2{
+  text-align: center;
+  color: white;
+  opacity: 0.8;
+}
 
+.spinner {
+  text-align: center;
+  margin-top: 100px;
+}
+
+/*  элемент спиннера - делаем круг из квадрата 40x40
+    с помощью свойства border-radius, левая граница круга окрашена
+    в другой цвет. далее запускаем бесконечную анимацию
+*/
+.spinner__animation {
+  display: inline-block;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  border-top: 3px solid rgba(0, 0, 0, 0.1);
+  border-right: 3px solid rgba(0, 0, 0, 0.1);
+  border-bottom: 3px solid rgba(0, 0, 0, 0.1);
+  border-left: 3px solid rgb(129, 138, 145);
+  animation: loading-spinner 0.5s infinite linear;
+}
+
+/* сама анимация вращения */
+@keyframes loading-spinner {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
