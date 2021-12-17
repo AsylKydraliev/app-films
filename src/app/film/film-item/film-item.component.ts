@@ -20,13 +20,12 @@ export class FilmItemComponent implements OnInit{
     if(this.film){
       this.filmId = this.film.id;
     }
-    this.httpService.filmsChange.subscribe();
+    this.filmsFetchingSubscription = this.httpService.filmsFetching.subscribe((isFetching: boolean) => {
+      this.loading = isFetching;
+    })
   }
 
   onDelete(id: string){
     this.httpService.delete(id);
-    this.filmsFetchingSubscription = this.httpService.filmsFetching.subscribe((isFetching: boolean) => {
-      this.loading = isFetching;
-    })
   }
 }

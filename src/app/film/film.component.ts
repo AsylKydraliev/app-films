@@ -19,7 +19,6 @@ export class FilmComponent implements OnInit, OnDestroy {
   ngOnInit() {
     this.filmsChangeSubscription = this.httpService.filmsChange.subscribe((films:Film[]) => {
       this.films = films;
-      console.log(this.films)
     });
     this.filmsFetchingSubscription = this.httpService.filmsFetching.subscribe((isFetching:boolean) => {
       this.loading = isFetching;

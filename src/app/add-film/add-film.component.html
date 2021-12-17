@@ -1,9 +1,11 @@
 <form (ngSubmit)="addFilm()" class="input-group mb-3">
   <input type="text" class="form-control" name="filmName" [(ngModel)]="name">
   <button class="btn btn-outline-secondary" type="submit" [disabled]="name === '' || loading">Add</button>
-  <div class="spinner" *ngIf="loading">
-    <span class="spinner__animation"></span>
-    <span class="spinner__info"></span>
+  <div *ngIf="loading">
+    <div class="spinner">
+      <span class="spinner__animation"></span>
+      <span class="spinner__info"></span>
+    </div>
   </div>
 </form>
 
