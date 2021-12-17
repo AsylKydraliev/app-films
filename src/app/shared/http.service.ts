@@ -18,8 +18,9 @@ export class HttpService {
     this.filmsFetching.next(true);
     const body = {film};
     this.http.post<Film>('https://app-blog-f76a2-default-rtdb.firebaseio.com/films.json', body).subscribe();
-    this.getData();
-    this.getData();
+    setTimeout(()=> {
+      this.getData();
+    }, 200);
     this.filmsFetching.next(false);
   }
 
@@ -45,8 +46,9 @@ export class HttpService {
     this.filmsFetching.next(true);
     this.http.delete(`https://app-blog-f76a2-default-rtdb.firebaseio.com/films/${id}.json`)
       .subscribe();
-    this.getData();
-    this.getData();
+    setTimeout(()=> {
+      this.getData();
+    }, 200);
     this.filmsFetching.next(false);
   }
 }
